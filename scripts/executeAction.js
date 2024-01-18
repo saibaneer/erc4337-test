@@ -21,8 +21,10 @@ async function main() {
     const accountFactory = await hre.ethers.getContractFactory('AccountFactory');
     const account = await hre.ethers.getContractFactory('Account')
     //CREATE (OPCODE) => hash(deployer + nonce)
-
-    const initCode = ACCOUNT_FACTORY + accountFactory.interface.encodeFunctionData('createAccount', [signerAddress]).slice(2)
+    console.log("Account address is: ", sender)
+    const initCode = 
+    "0x";
+    // ACCOUNT_FACTORY + accountFactory.interface.encodeFunctionData('createAccount', [signerAddress]).slice(2)
     await entryPoint.depositTo(sender, { value: hre.ethers.parseEther('1') })
     // console.log('Count before executing userOp is: ', await account.count())
     const userOp = {
